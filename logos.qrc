@@ -1,7 +1,5 @@
 <RCC>
   <qresource prefix="newPrefix">
-    <file>icons8_cancel_30px.png</file>
-    <file>icons8_cancel_50px.png</file>
     <file>icons8_search_24px.png</file>
   </qresource>
 </RCC>

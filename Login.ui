@@ -24,7 +24,7 @@
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-color: rgb(255, 251, 233);
+     <string notr="true">background-color: rgb(255, 252, 233);
 </string>
     </property>
     <property name="frameShape">
