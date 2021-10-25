@@ -1,5 +1,11 @@
 <RCC>
   <qresource prefix="newPrefix">
+    <file>pause.png</file>
+    <file>stop.png</file>
+    <file>start.png</file>
+    <file>front_sorting_120px.png</file>
+    <file>Algo.png</file>
     <file>icons8_search_24px.png</file>
+    <file>Progr.png</file>
   </qresource>
 </RCC>
