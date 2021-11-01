@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-# Form implementation generated from reading ui file 'Screen.ui'
+# Form implementation generated from reading ui file 'screen.ui'
 #
 # Created by: PyQt5 UI code generator 5.9.2
 #
@@ -246,3 +246,13 @@ class Ui_MainWindow(object):
         self.comboBox_2.setItemText(1, _translate("MainWindow", "Alphabetically Descending"))
 
 import logos_rc
+
+if __name__ == "__main__":
+    import sys
+    app = QtWidgets.QApplication(sys.argv)
+    MainWindow = QtWidgets.QMainWindow()
+    ui = Ui_MainWindow()
+    ui.setupUi(MainWindow)
+    MainWindow.show()
+    sys.exit(app.exec_())
+
