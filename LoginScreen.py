@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-# Form implementation generated from reading ui file 'Loginn.py'
+# Form implementation generated from reading ui file 'Login.ui'
 #
 # Created by: PyQt5 UI code generator 5.9.2
 #

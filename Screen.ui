@@ -73,6 +73,9 @@ border-radius: 30px;</string>
       <property name="value">
        <number>24</number>
       </property>
+      <property name="format">
+       <string>data scraped %p</string>
+      </property>
      </widget>
      <widget class="QLabel" name="label_3">
       <property name="geometry">
