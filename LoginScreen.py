@@ -1,3 +1,9 @@
+#!/usr/bin/env python
+# coding: utf-8
+
+# In[1]:
+
+
 # -*- coding: utf-8 -*-
 
 # Form implementation generated from reading ui file 'Login.ui'
@@ -7,8 +13,15 @@
 # WARNING! All changes made in this file will be lost!
 
 from PyQt5 import QtCore, QtGui, QtWidgets
-
-class Ui_MainWindow(object):
+from MandMunching import Ui_MainWindow
+import pandas as pd
+class Ui_LoginWindow(object):
+    def openWindow(self):
+        self.window = QtWidgets.QMainWindow()
+        self.ui = Ui_MainWindow()
+        self.ui.setupUi(self.window)
+        MainWindow.hide()
+        self.window.show()
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("MainWindow")
         MainWindow.resize(789, 551)
@@ -39,6 +52,7 @@ class Ui_MainWindow(object):
 "color: rgb(255, 251, 233);\n"
 "font: 10pt \"MS Shell Dlg 2\";")
         self.pushButton.setObjectName("pushButton")
+        self.pushButton.clicked.connect(self.openWindow)
         MainWindow.setCentralWidget(self.centralwidget)
         self.menubar = QtWidgets.QMenuBar(MainWindow)
         self.menubar.setGeometry(QtCore.QRect(0, 0, 789, 21))
@@ -59,14 +73,20 @@ class Ui_MainWindow(object):
         self.label_3.setText(_translate("MainWindow", "<html><head/><body><p><span style=\" font-size:14pt;\">Movies and Munching</span></p></body></html>"))
         self.pushButton.setText(_translate("MainWindow", "Click here to Continue ----->"))
 
-import login_rc
+import loginqrc
 
 if __name__ == "__main__":
     import sys
     app = QtWidgets.QApplication(sys.argv)
     MainWindow = QtWidgets.QMainWindow()
-    ui = Ui_MainWindow()
+    ui = Ui_LoginWindow()
     ui.setupUi(MainWindow)
     MainWindow.show()
     sys.exit(app.exec_())
+
+
+# In[ ]:
+
+
+
 

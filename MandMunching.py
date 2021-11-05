@@ -15,6 +15,7 @@
 from PyQt5 import QtCore, QtGui, QtWidgets
 from PyQt5.QtCore import Qt, QThread, pyqtSignal
 import time
+import pandas as pd
 class MyThread(QThread):
     change_val = pyqtSignal(int)
     def run(self):
@@ -23,7 +24,7 @@ class MyThread(QThread):
             count+=1
             time.sleep(0.3)
             self.change_val.emit(count)
-class Ui_MainWindow(object):
+class Ui_MainWindow(object): 
     
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("MainWindow")
@@ -231,10 +232,11 @@ class Ui_MainWindow(object):
     def setProgressBar(self,var):
         self.progressBar.setValue(var)
     def startProgressBar(self,event):
+        self.loadData()
         self.thread = MyThread()
         self.thread.change_val.connect(self.setProgressBar)
         self.thread.start()
-        self.loadData()
+        
     def loadData(self):
         row = 0
         Rating=[]
@@ -257,7 +259,7 @@ class Ui_MainWindow(object):
             Cast.append(str(listt["Cast/Star"][i]))
         
         print("Data stored in array now going to print in table")
-        for i in range(10):
+        for i in range(len(Title)):
             self.tableWidget.setItem(row,0,QtWidgets.QTableWidgetItem(Title[i]))
             self.tableWidget.setItem(row,1,QtWidgets.QTableWidgetItem(Rating[i]))
             self.tableWidget.setItem(row,2,QtWidgets.QTableWidgetItem(Type[i]))
@@ -332,16 +334,7 @@ class Ui_MainWindow(object):
         self.comboBox_2.setItemText(1, _translate("MainWindow", "Alphabetically Descending"))
         
 import logos
-def loadData():
-    listt = pd.read_csv('C:\\Users\\hp\\Desktop\\Scrap\\MoviesAndMunchingg.csv')
-    for i in range(len(listt)):
-        Title.append(listt["Title"][i])
-        Rating.append(listt["Rating"][i])
-        Type.append(listt["Type"][i])
-        Duration.append(listt["Duration"][i])
-        Year.append(listt["Release Year"][i])
-        Director.append(listt["Director"][i])
-        Cast.append(listt["Cast/Star"][i])
+
         
 if __name__ == "__main__":
     import sys
